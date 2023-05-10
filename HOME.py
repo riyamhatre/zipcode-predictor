@@ -15,7 +15,7 @@ def app():
 
 	with header:
 	    st.write('<p style="font-size:32px;"><b>Zip Code Recommendation Based on Given Factors</b></p>', unsafe_allow_html=True)
-	location = pd.read_csv('/Users/riyamhatre/Desktop/HDSI/location.csv')
+	location = pd.read_csv('location.csv')
 	z = st.text_input("Enter a Zip Code!")
 	if len(z) >1:
 		st.map(location[location['ZIP'] == int(z)])
