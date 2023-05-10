@@ -10,12 +10,12 @@ import streamlit as st
 def app():
     st.write('<p style="font-size:33px;"><b>Zip Code Statistics</b></p>', unsafe_allow_html=True)
     #st.header('Enter your criteria in order')
-    all_data = pd.read_csv('/Users/riyamhatre/Desktop/HDSI/all_data.csv')
+    all_data = pd.read_csv('all_data.csv')
     all_data = all_data.drop(columns = 'Unnamed: 0')
-    weather = pd.read_csv('/Users/riyamhatre/Desktop/HDSI/weather.csv')
+    weather = pd.read_csv('weather.csv')
     w = weather.copy()
     w = w.drop(columns = 'Unnamed: 0')
-    home_val = pd.read_csv('/Users/riyamhatre/Desktop/HDSI/home_val.csv')
+    home_val = pd.read_csv('home_val.csv')
 
 
     def zip_data(zipcode):
