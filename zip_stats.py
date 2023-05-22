@@ -12,7 +12,7 @@ def app():
     #st.header('Enter your criteria in order')
     all_data = pd.read_csv('all_data.csv')
     all_data = all_data.drop(columns = 'Unnamed: 0')
-    weather = pd.read_csv('/weather.csv')
+    weather = pd.read_csv('weather.csv')
     w = weather.copy()
     w = w.drop(columns = 'Unnamed: 0')
     home_val = pd.read_csv('home_val.csv')
