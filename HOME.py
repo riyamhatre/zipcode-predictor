@@ -15,7 +15,7 @@ def app():
 
 	with header:
 	    st.write('<p style="font-size:32px;"><b>Zip Code Recommendation Based on Given Factors</b></p>', unsafe_allow_html=True)
-	    st.write('<p style="font-size:20px;">This part of the website consists of the model. Here, you will input your criteria. After answering the questions on the page and hitting the button at the bottom, you can head to the Zip Code Statistics tab at the left to see some relevant data about your recommended zip code. </p>', unsafe_allow_html=True)
+	    st.write('<p style="font-size:20px;">Welcome! This website is meant for you to find an ideal zip code based on your criteria. Enter any zip code here to see its general location on the map! After that, head to the Model tab on the left. </p>', unsafe_allow_html=True)
 	location = pd.read_csv('location.csv')
 	z = st.text_input("Enter a Zip Code!")
 	if len(z) >1:
