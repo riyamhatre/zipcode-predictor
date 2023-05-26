@@ -18,7 +18,7 @@ def app():
         city = city.upper()
         state = state.upper()
 
-        g_latest_date = '2022-12-31'
+        g_latest_date = '2023-03-31'
         c = all_data[(all_data['city'] == city) & (all_data['state'] == state)]
         
         mini = c[g_latest_date].min()
