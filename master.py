@@ -12,7 +12,7 @@ import about
 
 PAGES = {
     "Model": model,
-    "Zipcode Statistics": zip_stats,
+    "Zip Code Statistics": zip_stats,
     "About": about
 }
 st.sidebar.title('Navigation')
