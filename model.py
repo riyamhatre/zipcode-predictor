@@ -11,6 +11,7 @@ def app():
     weather = pd.read_csv('weather.csv')
     w = weather.copy()
     w = w.drop(columns = 'Unnamed: 0')
+    location = pd.read_csv("location.csv")
     def price_city(city, state):
         all_data['state'] = all_data['state'].str.upper()
         all_data['city'] = all_data['city'].str.upper()
