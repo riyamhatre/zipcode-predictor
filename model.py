@@ -6,9 +6,9 @@ def app():
     st.write('<p style="font-size:33px;"><b>Zip Code Predictor</b></p>', unsafe_allow_html=True)
     st.write('<p style="font-size:20px;">This part of the website consists of the model. Here, you will input your criteria. After answering the questions on the page and hitting the button at the bottom, you can head to the Zip Code Statistics tab at the left to see some relevant data about your recommended zip code. </p>', unsafe_allow_html=True)
     #st.header('Enter your criteria in order')
-    all_data = pd.read_csv('/Users/riyamhatre/Desktop/HDSI/all_data.csv')
+    all_data = pd.read_csv('all_data.csv')
     all_data = all_data.drop(columns = 'Unnamed: 0')
-    weather = pd.read_csv('/Users/riyamhatre/Desktop/HDSI/weather.csv')
+    weather = pd.read_csv('weather.csv')
     w = weather.copy()
     w = w.drop(columns = 'Unnamed: 0')
     def price_city(city, state):
