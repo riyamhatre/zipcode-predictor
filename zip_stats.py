@@ -235,7 +235,7 @@ def app():
             out = "This Zipcode has no data!"
             st.write(out)
         else:
-            stat = st.selectbox("",["Choose a Factor","Climate", "Housing Prices","Diversity", "Population", "Travelling"])
+            stat = st.selectbox("",["Choose a Factor","Climate", "Housing Prices","Diversity", "Population", "Travelling",  "Map Location"])
             if "Housing Prices" == stat:
                 out = price(z)
             if "Diversity" == stat:
@@ -250,5 +250,12 @@ def app():
             if "Travelling" == stat:
                 out = travel(z)
                 st.write(out)
+            if "Map Location" == stat:
+                z = st.text_input("Enter a Zip Code!")
+                if len(z) >1:
+                    st.map(location[location['ZIP'] == int(z)])
+                else: 
+                    st.map(location)
+
 
 
