@@ -7,12 +7,10 @@ backgroundColor="#22a5e8"
 
 
 import model
-import HOME
 import zip_stats
 import about
 
 PAGES = {
-	"Home": HOME,
     "Model": model,
     "Zipcode Statistics": zip_stats,
     "About": about
