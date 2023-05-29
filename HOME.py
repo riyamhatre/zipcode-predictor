@@ -9,9 +9,6 @@ backgroundColor="#22a5e8"
 
 def app():
 	header = st.container()
-	dataset = st.container()
-	features  = st.container()
-	modelTraining = st.container()
 
 	with header:
 	    st.write('<p style="font-size:32px;"><b>Zip Code Recommendation Based on Given Factors</b></p>', unsafe_allow_html=True)
