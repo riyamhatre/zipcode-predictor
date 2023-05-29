@@ -230,8 +230,6 @@ def app():
     if st.button('Predict Zipcode'):
         price = factors(city, state, [factor_1],[travel_weight,pop_weight,diversity_weight], lower_bound, upper_bound, temperature, precipitation)
         st.write(price)
-#     if st.button("See the Zip Code's location on a map!"):   
-#         if len(zips) >1:
-#             st.map(location[location['ZIP'] == 92122])
-#         else: 
-#             st.write("N/A")
+        if st.button("See the Zip Code's location on a map!"):  
+            z = st.text_input("Enter a Zip Code!")
+            st.map(location[location['ZIP'] == z])
