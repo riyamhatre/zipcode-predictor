@@ -234,5 +234,3 @@ def app():
         if len(z) >1:
             st.write(st.map(location[location['ZIP'] == int(z)])
             #st.map(location[location['ZIP'] == int(zips[0])])
-        else: 
-            st.map(location)
