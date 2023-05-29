@@ -232,8 +232,7 @@ def app():
         st.write(price)
         if st.button("See the Zip Code's location on a map!"):   
             location = pd.read_csv('location.csv')
-            z = st.text_input("Enter a Zip Code!")
-            if len(z) >1:
-                st.map(location[location['ZIP'] == int(z)])
+            if len(zips) >1:
+                st.map(location[location['ZIP'] == zips[0])
             else: 
-                st.map(location)
+                st.write("N/A")
