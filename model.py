@@ -226,22 +226,27 @@ def app():
         precipitation = st.multiselect('What type of environment do you prefer (can choose multiple)', weather_stats(state.upper())[1])
 
 
-    if st.button('Predict Zipcode'):
+    if st.button('Predict Zip Code'):
         price = factors(city, state, [factor_1],[travel_weight,pop_weight,diversity_weight], lower_bound, upper_bound, temperature, precipitation)
         st.write(price)
-        header = st.container()
+    if st.button("See the Zip Code's location on a map!):
+	header = st.container()
 	dataset = st.container()
 	features  = st.container()
 	modelTraining = st.container()
 
-        with header:
-            st.write('<p style="font-size:32px;"><b>Zip Code Recommendation Based on Given Factors</b></p>', unsafe_allow_html=True)
-            st.write('<p style="font-size:20px;">Welcome! This website is meant for you to find an ideal zip code based on your criteria. Enter any zip code here to see its general location on the map! After that, head to the Model tab on the left. </p>', unsafe_allow_html=True)
-        location = pd.read_csv('location.csv')
-        z = st.text_input("Enter a Zip Code!")
-        if len(z) >1:
-            st.map(location[location['ZIP'] == int(z)])
-        else: 
-            st.map(location)
+	with header:
+	    st.write('<p style="font-size:32px;"><b>Zip Code Recommendation Based on Given Factors</b></p>', unsafe_allow_html=True)
+	    st.write('<p style="font-size:20px;">Welcome! This website is meant for you to find an ideal zip code based on your criteria. Enter any zip code here to see its general location on the map! After that, head to the Model tab on the left. </p>', unsafe_allow_html=True)
+	location = pd.read_csv('location.csv')
+	z = st.text_input("Enter a Zip Code!")
+	if len(z) >1:
+		st.map(location[location['ZIP'] == int(z)])
+	else: 
+		st.map(location)
+	
+
+
+       
     
 
