@@ -232,8 +232,8 @@ def app():
         st.write(price)
         z = st.text_input("Enter a Zip Code!")
         st.write(z)
-        if len(z) >1:
-            st.map(location[location['ZIP'] == int(z)])
-            #st.map(location[location['ZIP'] == int(zips[0])])
-        else:
-            st.map(location)
+#         if len(z) >1:
+#             st.map(location[location['ZIP'] == int(z)])
+#             #st.map(location[location['ZIP'] == int(zips[0])])
+#         else:
+#             st.map(location)
