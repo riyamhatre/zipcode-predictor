@@ -16,6 +16,7 @@ def app():
     w = weather.copy()
     w = w.drop(columns = 'Unnamed: 0')
     home_val = pd.read_csv('home_val.csv')
+    location = pd.read_csv("location.csv")
 
 
     def zip_data(zipcode):
