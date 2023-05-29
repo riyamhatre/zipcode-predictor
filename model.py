@@ -231,9 +231,9 @@ def app():
         #st.write(price)
         st.write(price)
     
-    location = pd.read_csv('location.csv')
-	z = st.text_input("Enter a Zip Code!")
-	if len(z) >1:
-		st.map(location[location['ZIP'] == int(z)])
-	else: 
-		st.map(location)
+location = pd.read_csv('location.csv')
+z = st.text_input("Enter a Zip Code!")
+if len(z) >1:
+	st.map(location[location['ZIP'] == int(z)])
+else: 
+	st.map(location)
