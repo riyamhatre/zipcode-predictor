@@ -11,6 +11,7 @@ def app():
     weather = pd.read_csv('weather.csv')
     w = weather.copy()
     w = w.drop(columns = 'Unnamed: 0')
+    location = pd.read_csv('location.csv')
     def price_city(city, state):
         all_data['state'] = all_data['state'].str.upper()
         all_data['city'] = all_data['city'].str.upper()
@@ -202,7 +203,8 @@ def app():
         if len(zips) == 0:
             return "Sorry! There are no zip codes that fit these criteria!" + "\n" + "Try keeping a wider range and adding more criteria"
         if len(zips) == 1:
-            return "Recommended Zip: " + str(zips[0])
+            print("Recommended Zip: " + str(zips[0]))
+            return st.map(location[location['ZIP'] == "92122"])
         if len(zips) > 1 and len(zips) <=3:
             return "Recommended Zip: " + str(zips[0]) +"\n" + "Other Zips to look into: " + str(zips[1:])
         if len(zips) > 3: 
@@ -230,9 +232,8 @@ def app():
         price = factors(city, state, [factor_1],[travel_weight,pop_weight,diversity_weight], lower_bound, upper_bound, temperature, precipitation)
         #st.write(price)
         st.write(price)
-    if st.button("See the Zip Code's location on a map!"):   
-        location = pd.read_csv('location.csv')
-        if len(zips) >1:
-            st.map(location[location['ZIP'] == 92122])
-        else: 
-            st.write("N/A")
+#     if st.button("See the Zip Code's location on a map!"):   
+#         if len(zips) >1:
+#             st.map(location[location['ZIP'] == 92122])
+#         else: 
+#             st.write("N/A")
