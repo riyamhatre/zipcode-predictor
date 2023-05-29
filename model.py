@@ -232,4 +232,7 @@ def app():
         st.write(price)
         if st.button("See the Zip Code's location on a map!"):  
             z = st.text_input("Enter a Zip Code!")
-            st.map(location[location['ZIP'] == z])
+            if len(z) >1:
+		        st.map(location[location['ZIP'] == int(z)])
+	        else: 
+		        st.map(location)
