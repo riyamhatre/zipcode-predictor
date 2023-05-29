@@ -230,9 +230,9 @@ def app():
         price = factors(city, state, [factor_1],[travel_weight,pop_weight,diversity_weight], lower_bound, upper_bound, temperature, precipitation)
         #st.write(price)
         st.write(price)
-        if st.button("See the Zip Code's location on a map!"):   
-            location = pd.read_csv('location.csv')
-            if len(price) >1:
-                st.map(location[location['ZIP'] == 92122])
-            else: 
-                st.write("N/A")
+    if st.button("See the Zip Code's location on a map!"):   
+        location = pd.read_csv('location.csv')
+        if len(price) >1:
+            st.map(location[location['ZIP'] == 92122])
+        else: 
+            st.write("N/A")
