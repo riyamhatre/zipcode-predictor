@@ -203,11 +203,11 @@ def app():
         if len(zips) == 0:
             return "Sorry! There are no zip codes that fit these criteria!" + "\n" + "Try keeping a wider range and adding more criteria"
         if len(zips) == 1:
-            return "Recommended Zip: " + str(zips[0])
+            return "Recommended Zip Code: " + str(zips[0])
         if len(zips) > 1 and len(zips) <=3:
-            return "Recommended Zip: " + str(zips[0]) + "." +'\n' + "Other Zips to look into: " + str(zips[1:])
+            return "Recommended Zip Code: " + str(zips[0]) + "." +'\n' + "Other Zip Codes to look into: " + str(zips[1:])
         if len(zips) > 3: 
-            return "Recommended Zip: " + str(zips[0]) +"." + "\n" +"Other Zips to look into: " + str(zips[1:4])
+            return "Recommended Zip Code: " + str(zips[0]) +"." + "\n" +"Other Zip Codes to look into: " + str(zips[1:4])
 
     
     city = st.text_input('City')
