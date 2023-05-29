@@ -210,8 +210,8 @@ def app():
             return "Recommended Zip Code: " + str(zips[0]) +"." + "\n" +"Other Zip Codes to look into: " + str(zips[1:4])
 
     
-    city = st.text_input('City')
-    state = st.text_input('State')
+    city = st.text_input('Enter a city')
+    state = st.text_input('Enter a state')
     if len(city) >1 and len(state) > 1: 
         l = price_city(city, state)
         lower_bound = st.selectbox('Price (Lower Bound)',l)
@@ -219,7 +219,7 @@ def app():
         upper_bound = st.selectbox('Price (Upper Bound)',l[limit:])
     factor_1 = st.multiselect('Age Demographic (can choose multiple):', ['young_people','retirement', 'families'])
     travel_weight = st.slider('How important is walkability to you?', 0.0, 100.0)
-    pop_weight = st.slider('Do you prefer low population density or high?', -1.0,1.0)
+    pop_weight = st.slider('Do you prefer low population density or high? (-1 is low, 1 is high)', -1.0,1.0)
     diversity_weight = st.slider('How important diversity is to you', 0.0, 100.0)
     if True: 
         options = weather_stats
@@ -227,6 +227,6 @@ def app():
         precipitation = st.multiselect('What type of environment do you prefer (can choose multiple)', weather_stats(state.upper())[1])
 
 
-    if st.button('Predict Zipcode'):
+    if st.button('Predict Zip Code'):
         price = factors(city, state, [factor_1],[travel_weight,pop_weight,diversity_weight], lower_bound, upper_bound, temperature, precipitation)
         st.write(price)
