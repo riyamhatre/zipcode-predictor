@@ -233,6 +233,6 @@ def app():
         if st.button("See the Zip Code's location on a map!"):   
             location = pd.read_csv('location.csv')
             if len(zips) >1:
-                st.map(location[location['ZIP'] == '92122'])
+                st.map(location[location['ZIP'] == 92122])
             else: 
                 st.write("N/A")
