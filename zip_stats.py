@@ -252,7 +252,6 @@ def app():
                 out = travel(z)
                 st.write(out)
             if "Map Location" == stat:
-                z = st.text_input("Enter a Zip Code!")
                 if len(z) >1:
                     st.map(location[location['ZIP'] == int(z)])
                 else: 
