@@ -231,7 +231,7 @@ def app():
         price = factors(city, state, [factor_1],[travel_weight,pop_weight,diversity_weight], lower_bound, upper_bound, temperature, precipitation)
         st.write(price)
         z = st.text_input("Enter a Zip Code!")
-        if len(z) >1:
-            st.map(location[location['ZIP'] == int(z)])
+        if len(zips) >1:
+            st.map(location[location['ZIP'] == int(zips[0]))
         else: 
             st.map(location)
