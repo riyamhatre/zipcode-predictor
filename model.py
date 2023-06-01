@@ -22,6 +22,8 @@ def app():
         g_latest_date = '2022-12-31'
         c = all_data[(all_data['city'] == city) & (all_data['state'] == state)]
         
+        if c.shape[0] == 0:
+            return 0
         mini = c[g_latest_date].min()
         digits = len(str(int(mini))) -2 
         lower_bound = math.floor(int(mini)/int('1'+''.zfill(digits)))*10**digits
@@ -214,7 +216,7 @@ def app():
     state = st.selectbox('Enter a state (Required)', state_names)
     if len(city) >1 and state != "Select a State": 
         l = price_city(city, state)
-        if len(l) == 0:
+        if l == 0:
             st.write("Choose a state that has that city!")
             return
         lower_bound = st.selectbox('Price (Lower Bound)',l)
