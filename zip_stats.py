@@ -9,7 +9,7 @@ import streamlit as st
 
 def app():
     st.write('<p style="font-size:33px;"><b>Zip Code Statistics</b></p>', unsafe_allow_html=True)
-    st.write('<p style="font-size:33px;"><b>This section of the website is meant to show you some additional statistics about your recommended zip code. After typing in your zip code, you will see a drop down menu appear, which has different statistics you can take a look at. Here are some small descriptions for each.</b></p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:20px;"><b>This section of the website is meant to show you some additional statistics about your recommended zip code. After typing in your zip code, you will see a drop down menu appear, which has different statistics you can take a look at. Here are some small descriptions for each.</b></p>', unsafe_allow_html=True)
     #st.header('Enter your criteria in order')
     all_data = pd.read_csv('all_data.csv')
     all_data = all_data.drop(columns = 'Unnamed: 0')
