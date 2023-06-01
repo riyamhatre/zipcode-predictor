@@ -11,11 +11,11 @@ import zip_stats
 import about
 
 PAGES = {
-    "Model": model,
+    "Zip Code Recommendation System ": model,
     "Zip Code Statistics": zip_stats,
     "About": about
 }
 st.sidebar.title('Navigation')
-selection = st.sidebar.radio("Go to", list(PAGES.keys()))
+selection = st.sidebar.radio("", list(PAGES.keys()))
 page = PAGES[selection]
 page.app()
