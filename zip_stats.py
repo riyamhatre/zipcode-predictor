@@ -242,6 +242,7 @@ def app():
             stat = st.selectbox("",["Choose a Factor","Climate", "Housing Prices","Diversity", "Population", "Travelling",  "Map Location"])
             if "Housing Prices" == stat:
                 out = price(z)
+                st.write(out)
             if "Diversity" == stat:
                 out = race(z)
             if "Climate" == stat:
