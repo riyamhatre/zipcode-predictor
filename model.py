@@ -16,6 +16,9 @@ def app():
     def price_city(city, state):
         all_data['state'] = all_data['state'].str.upper()
         all_data['city'] = all_data['city'].str.upper()
+        
+        home_val['State'] = home_val['State'].str.upper()
+        home_val['City'] = home_val['City'].str.upper()
 
         city = city.upper()
         state = state.upper()
