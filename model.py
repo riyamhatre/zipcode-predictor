@@ -205,7 +205,7 @@ def app():
         if len(zips) == 1:
             return "Recommended Zip Code: " + str(zips[0])
         if len(zips) > 1 and len(zips) <=3:
-            return "Recommended Zip Code: " + str(zips[0]) + "." +'\n' + "Other Zip Codes to look into: " + str(zips[1:])
+            return "Recommended Zip Code: " + str(zips[0]) + "." +'<br>' + "Other Zip Codes to look into: " + str(zips[1:])
         if len(zips) > 3: 
             return "Recommended Zip Code: " + str(zips[0]) +"." + "\n" +"Other Zip Codes to look into: " + str(zips[1:4])
 
