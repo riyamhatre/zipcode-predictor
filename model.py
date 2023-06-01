@@ -4,7 +4,7 @@ import math
 import streamlit as st
 def app():
     st.write('<p style="font-size:33px;"><b>Zip Code Recommendation System</b></p>', unsafe_allow_html=True)
-    st.write('<p style="font-size:20px;">Welcome! This website is meant to find an ideal zip code in the U.S for you to live in based on your criteria. After answering all the questions on this page and hitting the "Predict Zip Code" button at the bottom, you can head to the Zip Code Statistics tab on the left to see some relevant data about your recommended zip code. </p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:20px;">Welcome! This website is meant to find an ideal zip code in the U.S for you to live in based on your criteria. After answering all the questions on this page and hitting the "Submit" button at the bottom, you can head to the Zip Code Statistics tab on the left to see some relevant data about your recommended zip code. </p>', unsafe_allow_html=True)
     #st.header('Enter your criteria in order')
     all_data = pd.read_csv('all_data.csv')
     all_data = all_data.drop(columns = 'Unnamed: 0')
@@ -227,6 +227,6 @@ def app():
         precipitation = st.multiselect('What type of environment do you prefer (can choose multiple)', weather_stats(state.upper())[1])
 
 
-    if st.button('Predict Zip Code'):
+    if st.button('Submit'):
         price = factors(city, state, [factor_1],[travel_weight,pop_weight,diversity_weight], lower_bound, upper_bound, temperature, precipitation)
         st.write(price)
