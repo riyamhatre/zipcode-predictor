@@ -10,7 +10,7 @@ import streamlit as st
 def app():
     st.write('<p style="font-size:33px;"><b>Zip Code Statistics</b></p>', unsafe_allow_html=True)
     st.write('<p style="font-size:20px;">This section of the website is meant to show you some additional statistics about your recommended zip code. After typing in your zip code, you will see a drop down menu appear, which has different statistics you can take a look at. Here are some small descriptions for each.</p>', unsafe_allow_html=True)
-    st.write('<p style="font-size:15px;">Climate: Average temperature and precipitation for each month in 2022</p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:15px;"><b>Climate:</b> Average temperature and precipitation for each month in 2022</p>', unsafe_allow_html=True)
     st.write('<p style="font-size:15px;">Housing Prices: The average housing prices from March 2021 to March 2023 </p>', unsafe_allow_html=True)
     st.write('<p style="font-size:15px;">Diversity: Distribution of each racial group</p>', unsafe_allow_html=True)
     st.write('<p style="font-size:15px;">Population: Total population and population density </p>', unsafe_allow_html=True)
