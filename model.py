@@ -231,6 +231,7 @@ def app():
             return
         if l == 1:
             st.write("This combination of city and state has no data!")
+            return
         lower_bound = st.selectbox('Price (Lower Bound)',l)
         limit = l.index(lower_bound) + 1
         upper_bound = st.selectbox('Price (Upper Bound)',l[limit:])
