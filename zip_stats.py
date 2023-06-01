@@ -165,7 +165,9 @@ def app():
         vals = home_val.copy()
         vals = vals.drop(columns = {'Unnamed: 0', 'State', 'City', 'CountyName'})
         
-        if int(zipcode) not in vals['Zip']:
+        a = vals['Zip']
+        
+        if int(zipcode) not in a:
             print("Sorry, there is no housing data for this zip code!")
             return
 
