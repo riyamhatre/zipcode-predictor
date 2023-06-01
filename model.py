@@ -30,7 +30,7 @@ def app():
             return 0
         d = home_val[(home_val['City'] == city) & (home_val['State'] == state)]
         if  d.shape[0] == 0:
-            return 0
+            return 1
         mini = c[g_latest_date].min()
         digits = len(str(int(mini))) -2 
         lower_bound = math.floor(int(mini)/int('1'+''.zfill(digits)))*10**digits
@@ -229,6 +229,8 @@ def app():
         if l == 0:
             st.write("Choose a state that has that city!")
             return
+        if l == 1:
+            st.write("This combination of city and state has no data!")
         lower_bound = st.selectbox('Price (Lower Bound)',l)
         limit = l.index(lower_bound) + 1
         upper_bound = st.selectbox('Price (Upper Bound)',l[limit:])
