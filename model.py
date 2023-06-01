@@ -157,7 +157,7 @@ def app():
             category = []
             if 'retirement' in factor[0]:
                 category.append(1)
-            if 'young people' in factor[0]:
+            if 'young_people' in factor[0]:
                 category.append(0)
             if 'families' in factor[0]:
                 category.append(-1)
