@@ -234,5 +234,8 @@ def app():
             temperature = ['cold','cool','moderate','warm','hot']
         if len(precipitation) == 0:
             precipitation = ['very dry','dry','moderate precipitation', 'heavy precipitation']
+        if len(city) ==0:
+            st.write("Enter a valid city")
+            return
         price = factors(city, state, [factor_1],[travel_weight,pop_weight,diversity_weight], lower_bound, upper_bound, temperature, precipitation)
         st.write(price,unsafe_allow_html=True)
