@@ -229,4 +229,4 @@ def app():
 
     if st.button('Submit'):
         price = factors(city, state, [factor_1],[travel_weight,pop_weight,diversity_weight], lower_bound, upper_bound, temperature, precipitation)
-        st.write(price)
+        st.write(price,unsafe_allow_html=True)
