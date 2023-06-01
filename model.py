@@ -11,6 +11,7 @@ def app():
     weather = pd.read_csv('weather.csv')
     w = weather.copy()
     w = w.drop(columns = 'Unnamed: 0')
+    home_val = pd.read_csv('home_val.csv')
     location = pd.read_csv("location.csv")
     def price_city(city, state):
         all_data['state'] = all_data['state'].str.upper()
@@ -23,6 +24,8 @@ def app():
         c = all_data[(all_data['city'] == city) & (all_data['state'] == state)]
         
         if c.shape[0] == 0:
+            return 0
+        if  home_val[(home_val['city'] == city) & (home_val['state'] == state)].shape[0] == 0:
             return 0
         mini = c[g_latest_date].min()
         digits = len(str(int(mini))) -2 
