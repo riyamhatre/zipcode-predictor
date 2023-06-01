@@ -14,7 +14,7 @@ def app():
     st.write('<p style="font-size:15px;"><b>Housing Prices:</b> The average housing prices from March 2021 to March 2023 </p>', unsafe_allow_html=True)
     st.write('<p style="font-size:15px;"><b>Diversity:</b> Distribution of each racial group</p>', unsafe_allow_html=True)
     st.write('<p style="font-size:15px;"><b>Population:</b> Total population and population density </p>', unsafe_allow_html=True)
-    st.write('<p style="font-size:15px;"><b>Traveling:</b> Walk, Bike, and Transit scores.  </p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:15px;"><b>Traveling:</b> Shows how convenient traveling by either walking, biking, or transit is </p>', unsafe_allow_html=True)
     st.write('<p style="font-size:15px;"><b>Map Location:</b> General location of zip code on the U.S. map</p>', unsafe_allow_html=True)
     #st.header('Enter your criteria in order')
     all_data = pd.read_csv('all_data.csv')
