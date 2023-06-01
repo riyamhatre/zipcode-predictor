@@ -214,6 +214,9 @@ def app():
     state = st.selectbox('Enter a state (Required)', state_names)
     if len(city) >1 and state != "Select a State": 
         l = price_city(city, state)
+        if len(l) == 0:
+            st.write("Choose a state that has that city!")
+            return
         lower_bound = st.selectbox('Price (Lower Bound)',l)
         limit = l.index(lower_bound) + 1
         upper_bound = st.selectbox('Price (Upper Bound)',l[limit:])
