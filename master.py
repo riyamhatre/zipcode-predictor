@@ -11,7 +11,7 @@ import zip_stats
 import about
 
 PAGES = {
-    "Zip Code Recommendation System ": model,
+    "Zip Code Recommendation": model,
     "Zip Code Statistics": zip_stats,
     "About": about
 }
