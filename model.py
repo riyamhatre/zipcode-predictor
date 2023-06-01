@@ -228,5 +228,11 @@ def app():
 
 
     if st.button('Submit'):
+        if len(factor_1) == 0:
+            factor_1 = ['young_people','retirement', 'families']
+        if len(temperature) == 0:
+            temperature = ['cold','cool','moderate','warm','hot']
+        if len(precipitation) == 0:
+            precipitation = ['very dry','dry','moderate precipitation', 'heavy precipitation']
         price = factors(city, state, [factor_1],[travel_weight,pop_weight,diversity_weight], lower_bound, upper_bound, temperature, precipitation)
         st.write(price,unsafe_allow_html=True)
