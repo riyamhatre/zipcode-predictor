@@ -3,8 +3,8 @@ import numpy as np
 import math
 import streamlit as st
 def app():
-    st.write('<p style="font-size:33px;"><b>Zip Code Predictor</b></p>', unsafe_allow_html=True)
-    st.write('<p style="font-size:20px;">Welcome! This website is meant for you to find an ideal zip code in the U.S.A based on your criteria. After answering the questions on this page and hitting the button at the bottom, you can head to the Zip Code Statistics tab on the left to see some relevant data about your recommended zip code. </p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:33px;"><b>Zip Code Recommendation System</b></p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:20px;">Welcome! This website is meant to find an ideal zip code in the U.S for you to live in based on your criteria. After answering all the questions on this page and hitting the "Predict Zip Code" button at the bottom, you can head to the Zip Code Statistics tab on the left to see some relevant data about your recommended zip code. </p>', unsafe_allow_html=True)
     #st.header('Enter your criteria in order')
     all_data = pd.read_csv('all_data.csv')
     all_data = all_data.drop(columns = 'Unnamed: 0')
