@@ -25,7 +25,8 @@ def app():
         
         if c.shape[0] == 0:
             return 0
-        if  home_val[(home_val['city'] == city) & (home_val['state'] == state)].shape[0] == 0:
+        d = home_val[(home_val['City'] == city) & (home_val['State'] == state)]
+        if  d.shape[0] == 0:
             return 0
         mini = c[g_latest_date].min()
         digits = len(str(int(mini))) -2 
