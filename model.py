@@ -217,7 +217,7 @@ def app():
         lower_bound = st.selectbox('Price (Lower Bound)',l)
         limit = l.index(lower_bound) + 1
         upper_bound = st.selectbox('Price (Upper Bound)',l[limit:])
-    factor_1 = st.multiselect('Age Demographic (can choose multiple):', ['young_people','retirement', 'families'])
+    factor_1 = st.multiselect('Age Demographic (can choose multiple):', ['young people','retirement', 'families'])
     travel_weight = st.slider('How important is walkability to you?', 0.0, 100.0)
     pop_weight = st.slider('Do you prefer low population density or high? (-1 is low, 1 is high)', -1.0,1.0)
     diversity_weight = st.slider('How important diversity is to you', 0.0, 100.0)
