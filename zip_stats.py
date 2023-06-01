@@ -9,7 +9,13 @@ import streamlit as st
 
 def app():
     st.write('<p style="font-size:33px;"><b>Zip Code Statistics</b></p>', unsafe_allow_html=True)
-    st.write('<p style="font-size:20px;"><b>This section of the website is meant to show you some additional statistics about your recommended zip code. After typing in your zip code, you will see a drop down menu appear, which has different statistics you can take a look at. Here are some small descriptions for each.</b></p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:20px;">This section of the website is meant to show you some additional statistics about your recommended zip code. After typing in your zip code, you will see a drop down menu appear, which has different statistics you can take a look at. Here are some small descriptions for each.</p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:15px;">Climate: Average temperature and precipitation for each month in 2022</p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:15px;">Housing Prices: The average housing prices from March 2021 to March 2023 </p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:15px;">Diversity: Distribution of each racial group</p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:15px;">Population: Total population and population density </p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:15px;">Traveling: Walk, Bike, and Transit scores.  </p>', unsafe_allow_html=True)
+    st.write('<p style="font-size:15px;">Map Location: General location of zip code on the U.S. map</p>', unsafe_allow_html=True)
     #st.header('Enter your criteria in order')
     all_data = pd.read_csv('all_data.csv')
     all_data = all_data.drop(columns = 'Unnamed: 0')
@@ -238,7 +244,7 @@ def app():
             out = "This Zipcode has no data!"
             st.write(out)
         else:
-            stat = st.selectbox("",["Choose a Factor","Climate", "Housing Prices","Diversity", "Population", "Travelling",  "Map Location"])
+            stat = st.selectbox("",["Choose a Factor","Climate", "Housing Prices","Diversity", "Population", "Traveling",  "Map Location"])
             if "Housing Prices" == stat:
                 out = price(z)
             if "Diversity" == stat:
@@ -250,7 +256,7 @@ def app():
             if "Population" == stat:
                 output = pop(z)
                 st.write(output)
-            if "Travelling" == stat:
+            if "Traveling" == stat:
                 out = travel(z)
                 st.write(out)
             if "Map Location" == stat:
