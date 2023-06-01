@@ -210,8 +210,8 @@ def app():
             return "Recommended Zip Code: " + str(zips[0]) +'<br>' +"Other Zip Codes to look into: " + str(zips[1:4])
 
     
-    city = st.text_input('Enter a city')
-    state = st.text_input('Enter a state')
+    city = st.text_input('Enter a city (Required)')
+    state = st.text_input('Enter a state (Required)')
     if len(city) >1 and len(state) > 1: 
         l = price_city(city, state)
         lower_bound = st.selectbox('Price (Lower Bound)',l)
