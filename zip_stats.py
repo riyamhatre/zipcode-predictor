@@ -163,14 +163,8 @@ def app():
     
     def price(zipcode):
         vals = home_val.copy()
+        
         vals = vals.drop(columns = {'Unnamed: 0', 'State', 'City', 'CountyName'})
-        
-        a = vals['Zip']
-        
-        if int(zipcode) not in a:
-            print("Sorry, there is no housing data for this zip code!")
-            return
-
         data = vals[vals['Zip'] == int(zipcode)][list(vals.columns[-25:])]
         data = data.T.reset_index()
         data.columns= ['Date','Price']
