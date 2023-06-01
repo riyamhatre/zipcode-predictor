@@ -209,10 +209,10 @@ def app():
         if len(zips) > 3: 
             return "Recommended Zip Code: " + str(zips[0]) +'<br>' +"Other Zip Codes to look into: " + str(zips[1:4])
 
-    state_names =  ["Alabama","Alaska","Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana","Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland","Massachusetts","Michigan", "Minnesota","Mississippi", "Missouri", "Montana","Nebraska", "Nevada","New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania","Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont","Virginia","Washington","West Virginia", "Wisconsin", "Wyoming"]
+    state_names =  ["Select a State", "Alabama","Alaska","Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana","Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland","Massachusetts","Michigan", "Minnesota","Mississippi", "Missouri", "Montana","Nebraska", "Nevada","New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania","Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont","Virginia","Washington","West Virginia", "Wisconsin", "Wyoming"]
     city = st.text_input('Enter a city (Required)')
     state = st.selectbox('Enter a state (Required)', state_names)
-    if len(city) >1: 
+    if len(city) >1 and state != "Select a State": 
         l = price_city(city, state)
         lower_bound = st.selectbox('Price (Lower Bound)',l)
         limit = l.index(lower_bound) + 1
