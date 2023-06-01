@@ -137,7 +137,7 @@ def app():
 
         ####checking factors
         # age
-        if 'retirement' in factor[0] or 'young people' in factor[0] or 'families' in factor[0]: #age group options young, retirement
+        if 'retirement' in factor[0] or 'young_people' in factor[0] or 'families' in factor[0]: #age group options young, retirement
             temp = pd.DataFrame()
             temp['families'] = filtered[['% Age | Under 5 years, 2021 [Estimated]','% Age | 5 to 9 years, 2021 [Estimated]','% Age | 10 to 14 years, 2021 [Estimated]','% Age | 15 to 17 years, 2021 [Estimated]','% Age | 35 to 44 years, 2021 [Estimated]','% Age | 45 to 54 years, 2021 [Estimated]']].sum(axis =1)
             temp['young_people'] = filtered[['% Age | 18 and 19 years, 2021 [Estimated]','% Age | 20 to 24 years, 2021 [Estimated]','% Age | 25 to 34 years, 2021 [Estimated]']].sum(axis = 1)
@@ -217,7 +217,7 @@ def app():
         lower_bound = st.selectbox('Price (Lower Bound)',l)
         limit = l.index(lower_bound) + 1
         upper_bound = st.selectbox('Price (Upper Bound)',l[limit:])
-    factor_1 = st.multiselect('Age Demographic (can choose multiple):', ['young people','retirement', 'families'])
+    factor_1 = st.multiselect('Age Demographic (can choose multiple):', ['young_people','retirement', 'families'])
     travel_weight = st.slider('How important is walkability to you?', 0.0, 100.0)
     pop_weight = st.slider('Do you prefer low population density or high? (-1 is low, 1 is high)', -1.0,1.0)
     diversity_weight = st.slider('How important diversity is to you', 0.0, 100.0)
@@ -229,7 +229,7 @@ def app():
 
     if st.button('Submit'):
         if len(factor_1) == 0:
-            factor_1 = ['young people','retirement', 'families']
+            factor_1 = ['young_people','retirement', 'families']
         if len(temperature) == 0:
             temperature = ['cold','cool','moderate','warm','hot']
         if len(precipitation) == 0:
