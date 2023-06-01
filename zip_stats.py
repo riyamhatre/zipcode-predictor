@@ -164,14 +164,18 @@ def app():
     def price(zipcode):
         vals = home_val.copy()
         vals = vals.drop(columns = {'Unnamed: 0', 'State', 'City', 'CountyName'})
-        data = vals[vals['Zip'] == int(zipcode)][list(vals.columns[-25:])]
-        data = data.T.reset_index()
-        data.columns= ['Date','Price']
+        
+        if int(zipcode) not in vals['Zip']:
+            print("Sorry, there is no housing data for this zip code!")
+        else:
+            data = vals[vals['Zip'] == int(zipcode)][list(vals.columns[-25:])]
+            data = data.T.reset_index()
+            data.columns= ['Date','Price']
 
-        sns.scatterplot(data=data,x="Date", y="Price", color = 'purple')
-        plt.xticks(rotation=90)
-        plt.ticklabel_format(style='plain', axis='y')
-        st.pyplot(plt)
+            sns.scatterplot(data=data,x="Date", y="Price", color = 'purple')
+            plt.xticks(rotation=90)
+            plt.ticklabel_format(style='plain', axis='y')
+            st.pyplot(plt)
     def travel(zipcode):
         zipdata = all_data[all_data['Zip'] == int(zipcode)]
         zipcode = str(zipcode)
