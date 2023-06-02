@@ -46,6 +46,8 @@ def app():
         return price_range
     def weather_stats(state):
         state = state.upper()
+        if w[w['state'] == state].shape[0] == 0:
+            return []
         def weather_score(x):
             if x < 25:
                 return 0
@@ -59,8 +61,6 @@ def app():
                 return 4
             
         def weather_label(x):
-            if w[w['state'] == state].shape[0] == 0:
-                return []
             if x == 1 or x == 2: 
                 return 'cold'
             if x == 3 or x == 4: 
