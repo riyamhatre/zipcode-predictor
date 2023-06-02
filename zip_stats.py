@@ -233,7 +233,7 @@ def app():
         zipcode = str(zipcode)
         return 'Population: ' + str(zipdata["population"].iloc[0]) + "\n " + "\nPopulation Density: " + str(zipdata["pop_density"].iloc[0])
 
-    z = st.text_input('<p style="font-size:15px;"><b>Type in a Zip Code to see the stats!</b></p>', unsafe_allow_html=True)
+    z = st.text_input('Type in a Zip Code to see the stats!')
     
     if len(z) >=1:
         if int(z) not in list(all_data["Zip"]):
