@@ -228,8 +228,7 @@ def app():
         w['yearly_prec'] = w['yearly_prec'].apply(prec)
         
         if w[w['Zip'] == int(zipcode)].shape[0] == 0:
-            st.write(0)
-            return 
+            return 0
         return "Climate: " + w[w['Zip'] == int(zipcode)]['temp_label'].iloc[0].title() + "\n " + "\nPrecipitation: " + w[w['Zip'] == int(zipcode)]['yearly_prec'].iloc[0].title()
 
     def pop(zipcode):
@@ -251,8 +250,11 @@ def app():
                 out = race(z)
             if "Climate" == stat:
                 out2 = climate(z)
-                st.write(out2)
-                out = zip_data(z)
+                if out2 == 0:
+                    st.write("This zip code has no climate data!")
+                else:
+                    st.write(out2)
+                    out = zip_data(z)
             if "Population" == stat:
                 output = pop(z)
                 st.write(output)
