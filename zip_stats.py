@@ -11,7 +11,7 @@ def app():
     st.write('<p style="font-size:33px;"><b>Zip Code Statistics</b></p>', unsafe_allow_html=True)
     st.write('<p style="font-size:20px;">This section of the website is meant to show you some additional statistics about your recommended zip code. After typing in your zip code, you will see a drop down menu appear, which has different factors you can take a look at.</p>', unsafe_allow_html=True)
     st.write('<p style="font-size:20px;"><b>Factors:</b></p>', unsafe_allow_html=True)
-    st.write('<span style="font-size:15px;"><b>Climate:</b> Average temperature and precipitation for each month in 2022</span>', unsafe_allow_html=True)
+    st.write('<p style="font-size:15px;"><b>Climate:</b> Average temperature and precipitation for each month in 2022 <br> <b>Housing Prices:</b> The average housing prices from March 2021 to March 2023', unsafe_allow_html=True)
     st.write('<span style="font-size:15px;"><b>Housing Prices:</b> The average housing prices from March 2021 to March 2023</span>', unsafe_allow_html=True)
     st.write('<p style="font-size:15px;"><b>Diversity:</b> Distribution of each racial group</p>', unsafe_allow_html=True)
     st.write('<p style="font-size:15px;"><b>Population:</b> Total population and population density </p>', unsafe_allow_html=True)
