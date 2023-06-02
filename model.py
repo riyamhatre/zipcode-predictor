@@ -201,8 +201,7 @@ def app():
         for i in temperature:
             l = location[location['temp_label'] == i]
             temp_conditions = pd.concat([temp_conditions, l])
-        
-        print(storage['travel_score'],weight[0],storage['population'], weight[1],storage['diversity'],weight[2])
+       
         storage['Rank'] = (storage['travel_score'] * weight[0] +
                      storage['population'] * weight[1] + storage['diversity'] * weight[2]).rank().astype('int64')
         
