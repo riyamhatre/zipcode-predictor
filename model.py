@@ -202,9 +202,11 @@ def app():
             l = location[location['temp_label'] == i]
             temp_conditions = pd.concat([temp_conditions, l])
         
-        
+        print(storage['travel_score'],weight[0],storage['population'], weight[1],storage['diversity'],weight[2])
         storage['Rank'] = (storage['travel_score'] * weight[0] +
                      storage['population'] * weight[1] + storage['diversity'] * weight[2]).rank().astype('int64')
+        
+        
         output = pd.merge(storage.reset_index(), temp_conditions)
         
         output_table = output.merge(all_data[['Zip','city']], how = 'left', on = 'Zip')
