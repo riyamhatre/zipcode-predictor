@@ -198,7 +198,7 @@ def app():
         #population 1-low, 2-medium, 3-high
         storage['population'] = filtered['pop_density']
         
-        if len(weather_stats(state.upper())) > 0:
+        if weather_stats(state.upper()) != []:
             temp_conditions = pd.DataFrame()
             location = weather_stats(state.upper())[2]
             for i in temperature:
