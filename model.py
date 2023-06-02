@@ -244,17 +244,16 @@ def app():
     travel_weight = st.slider('How important is walkability to you?', 0.0, 100.0)
     pop_weight = st.slider('Do you prefer low population density or high? (-1 is low, 1 is high)', -1.0,1.0)
     diversity_weight = st.slider('How important diversity is to you', 0.0, 100.0)
-    if True: 
-        if len(weather_stats(state.upper())) > 0:
-            temperature = st.multiselect('What type of climate do you prefer (can choose multiple)', weather_stats(state.upper())[0])
-            precipitation = st.multiselect('What type of environment do you prefer (can choose multiple)', weather_stats(state.upper())[1])
-        else:
+    if True:      
+        if len(weather_stats(state.upper())) < 0:
             if state.upper() == "HAWAII":
                 temperature = st.multiselect('What type of climate do you prefer (can choose multiple)',["warm","hot"] )
                 precipitation = st.multiselect('What type of environment do you prefer (can choose multiple)', ["heavy precipitation"])
             if state.upper() == "ALASKA":
                 temperature = st.multiselect('What type of climate do you prefer (can choose multiple)',["cold"] )
                 precipitation = st.multiselect('What type of environment do you prefer (can choose multiple)', ["heavy precipitation"])
+         temperature = st.multiselect('What type of climate do you prefer (can choose multiple)', weather_stats(state.upper())[0])
+         precipitation = st.multiselect('What type of environment do you prefer (can choose multiple)', weather_stats(state.upper())[1])
                 
 
     if st.button('Submit'):
