@@ -59,6 +59,8 @@ def app():
                 return 4
             
         def weather_label(x):
+            if w[w['state'] == state].shape[0] == 0:
+                return []
             if x == 1 or x == 2: 
                 return 'cold'
             if x == 3 or x == 4: 
@@ -196,21 +198,23 @@ def app():
         #population 1-low, 2-medium, 3-high
         storage['population'] = filtered['pop_density']
         
-        temp_conditions = pd.DataFrame()
-        location = weather_stats(state.upper())[2]
-        for i in temperature:
-            l = location[location['temp_label'] == i]
-            temp_conditions = pd.concat([temp_conditions, l])
-       
-        storage['Rank'] = (storage['travel_score'] * weight[0] +
-                     storage['population'] * weight[1] + storage['diversity'] * weight[2]).rank().astype('int64')
-        
-        
-        output = pd.merge(storage.reset_index(), temp_conditions)
-        
+        if len(weather_stats(state.upper())) > 0:
+            temp_conditions = pd.DataFrame()
+            location = weather_stats(state.upper())[2]
+            for i in temperature:
+                l = location[location['temp_label'] == i]
+                temp_conditions = pd.concat([temp_conditions, l])
+
+            storage['Rank'] = (storage['travel_score'] * weight[0] +
+                         storage['population'] * weight[1] + storage['diversity'] * weight[2]).rank().astype('int64')
+
+            output = pd.merge(storage.reset_index(), temp_conditions)
+        else:
+            storage['Rank'] = (storage['travel_score'] * weight[0] +
+                         storage['population'] * weight[1] + storage['diversity'] * weight[2]).rank().astype('int64')
+            output = storage
+
         output_table = output.merge(all_data[['Zip','city']], how = 'left', on = 'Zip')
-        output_table['state'] = output_table['state'].str.title()
-        output_table['city'] = output_table['city'].str.title()
 
         zips = list(output_table.sort_values(by = 'Rank')["Zip"])
         if len(zips) == 0:
