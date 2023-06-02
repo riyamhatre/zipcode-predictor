@@ -46,7 +46,7 @@ def app():
         return price_range
     def weather_stats(state):
         state = state.upper()
-        if w[w['state'] == state].shape[0] == 0:
+        if state == "HAWAII" or state == "ALASKA":
             return []
         def weather_score(x):
             if x < 25:
