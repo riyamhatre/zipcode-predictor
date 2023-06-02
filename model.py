@@ -252,8 +252,12 @@ def app():
 #             temperature = st.multiselect('What type of climate do you prefer (can choose multiple)',["cold"] )
 #             precipitation = st.multiselect('What type of environment do you prefer (can choose multiple)', ["heavy precipitation"])
 #         else:
-            temperature = st.multiselect('What type of climate do you prefer (can choose multiple)', weather_stats(state.upper())[0])
-            precipitation = st.multiselect('What type of environment do you prefer (can choose multiple)', weather_stats(state.upper())[1])
+        temperature = ["warm"]
+        precipitation = ["dry"]
+    
+    
+#             temperature = st.multiselect('What type of climate do you prefer (can choose multiple)', weather_stats(state.upper())[0])
+#             precipitation = st.multiselect('What type of environment do you prefer (can choose multiple)', weather_stats(state.upper())[1])
                 
 
     if st.button('Submit'):
